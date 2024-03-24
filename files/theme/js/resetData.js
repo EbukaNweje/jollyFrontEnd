@@ -14,7 +14,7 @@ button.onclick = async (event) => {
 
   console.log(data);
 
-  fetch('https://the-bitpay-capital-back-end.vercel.app/api/login', {
+  fetch('https://jollybackend.onrender.com/api/login', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
