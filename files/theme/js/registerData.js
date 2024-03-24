@@ -27,6 +27,9 @@ const sendSignUpEmail = async () => {
   .then(response=> response.json())
     .then(response => {
       console.log(response);
+      const userId = localStorage.getItem('userId')
+      console.log("Local User Id", userId);
+      window.location.href = `https://bitpay-user-account.vercel.app/#/${userId}`;
     })
     .catch((error) => {
       console.log(error);
@@ -60,9 +63,6 @@ button.onclick = async (event) => {
       localStorage.setItem('userId', response.data._id)
           sendSignUpEmail();
       console.log(response.data._id)
-      const userId = localStorage.getItem('userId')
-      console.log("Local User Id", userId);
-      window.location.href = `https://bitpay-user-account.vercel.app/#/${userId}`;
       
     })
     .catch((error) => {
