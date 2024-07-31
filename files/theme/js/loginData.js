@@ -5,25 +5,25 @@ const button = document.getElementById('signInBtn')
 
 console.log(button);
 
-const sendLoginEmail = async () => {
-  const data = {
-    email: email.value,
-  };
-  fetch('https://jollybackend.onrender.com/api/loginemailsand', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(data),
-  })
-  .then(response=> response.json())
-    .then(response => {
-      console.log(response);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-};
+// const sendLoginEmail = async () => {
+//   const data = {
+//     email: email.value,
+//   };
+//   fetch('https://jollybackend.onrender.com/api/loginemailsand', {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//     body: JSON.stringify(data),
+//   })
+//   .then(response=> response.json())
+//     .then(response => {
+//       console.log(response);
+//     })
+//     .catch((error) => {
+//       console.log(error);
+//     });
+// };
 
 button.onclick = async (event) => {
   event.preventDefault();
@@ -54,7 +54,7 @@ button.onclick = async (event) => {
         return
       }else{
         console.log("object2");
-        sendLoginEmail()
+        // sendLoginEmail()
         window.location = `https://bitpay-user-account.vercel.app/#/${userId}`;
       }
     })
